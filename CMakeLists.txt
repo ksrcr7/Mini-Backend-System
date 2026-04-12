@@ -13,4 +13,5 @@ add_executable(Mini_Backend_System src/main.cpp
         src/Storage/ITaskStorage.h
         src/Storage/InMemoryTaskStorage.cpp
         src/Storage/InMemoryTaskStorage.h
-        src/Utils/JsonUtils.h)
+        src/Utils/JsonUtils.h
+        src/Model/Task.h)
