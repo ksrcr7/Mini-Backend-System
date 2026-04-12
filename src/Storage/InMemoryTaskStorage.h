@@ -1,14 +1,25 @@
-//
-// Created by ASUS on 4/12/2026.
-//
-
 #ifndef MINI_BACKEND_SYSTEM_INMEMORYTASKSTORAGE_H
 #define MINI_BACKEND_SYSTEM_INMEMORYTASKSTORAGE_H
 
+#include "ITaskStorage.h"
+#include <vector>
 
-class InMemoryTaskStorage {
+namespace backend{
 
-};
+    class InMemoryTaskStorage : public ITaskStorage {
+    private:
+        std::vector<Task> tasks;
+
+    public:
+        void add(const backend::Task& task) override;
+        std::vector<backend::Task> getAll() const override;
+        void update(const backend::Task& task) override;
+
+
+    };
+}
+
+
 
 
 #endif //MINI_BACKEND_SYSTEM_INMEMORYTASKSTORAGE_H
