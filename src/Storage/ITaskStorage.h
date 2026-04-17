@@ -11,6 +11,7 @@ public:
     virtual void add(const backend::Task& task) = 0;
     [[nodiscard]] virtual std::vector<backend::Task> getAll() const = 0;
     virtual void update(const backend::Task& task) = 0;
+    virtual backend::Task* findbyId(int id) = 0;
     virtual ~ITaskStorage() = default;
 
 };
