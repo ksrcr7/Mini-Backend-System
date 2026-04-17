@@ -12,8 +12,9 @@ namespace backend{
 
     public:
         void add(const backend::Task& task) override;
-        std::vector<backend::Task> getAll() const override;
+        [[nodiscard]] std::vector<backend::Task> getAll() const override;
         void update(const backend::Task& task) override;
+        Task* findbyId(int id) override;
 
 
     };

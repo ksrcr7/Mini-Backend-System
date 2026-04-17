@@ -22,3 +22,18 @@ void backend::InMemoryTaskStorage::update(const backend::Task &task) {
 
 
 }
+
+backend::Task *backend::InMemoryTaskStorage::findbyId(int id) {
+    auto it = std::find_if(tasks.begin(),tasks.end(),
+                 [&](Task& task){return task.id == id;});
+
+    if(it == tasks.end()){
+        return nullptr;
+    }
+
+    return &(*it);
+
+
+
+
+}
