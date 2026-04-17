@@ -1,14 +1,29 @@
-//
-// Created by ASUS on 4/12/2026.
-//
-
 #ifndef MINI_BACKEND_SYSTEM_TASKSERVICE_H
 #define MINI_BACKEND_SYSTEM_TASKSERVICE_H
 
+#include "../Storage/ITaskStorage.h"
+#include "../Model/Task.h"
+#include <vector>
 
-class TaskService {
+namespace backend {
 
-};
+    class TaskService {
+    private:
+        int nextId = 1;
+        ITaskStorage& storage;
+
+    public:
+        explicit TaskService(ITaskStorage &st);
+        void addTask(const std::string& title);
+        [[nodiscard]] std::vector<Task> getTasks() const;
+        void completeTask(int id) ;
+
+
+
+    };
+}
+
+
 
 
 #endif //MINI_BACKEND_SYSTEM_TASKSERVICE_H
