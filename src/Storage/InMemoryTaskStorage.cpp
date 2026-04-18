@@ -37,3 +37,14 @@ backend::Task *backend::InMemoryTaskStorage::findbyId(int id) {
 
 
 }
+
+bool backend::InMemoryTaskStorage::removebyId(int id) {
+    auto it = std::find_if(tasks.begin(),tasks.end(),
+                           [&](Task& task){return task.id == id;});
+
+    if(it == tasks.end())
+        return false;
+
+    tasks.erase(it);
+    return true;
+}

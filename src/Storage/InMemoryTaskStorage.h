@@ -15,6 +15,7 @@ namespace backend{
         [[nodiscard]] std::vector<backend::Task> getAll() const override;
         void update(const backend::Task& task) override;
         Task* findbyId(int id) override;
+        bool removebyId(int id) override;
 
 
     };
