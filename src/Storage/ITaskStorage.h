@@ -13,7 +13,7 @@ public:
     virtual void update(const backend::Task& task) = 0;
     virtual backend::Task* findbyId(int id) = 0;
     virtual bool removebyId(int id) = 0;
-    virtual bool removebyTitle(std::string t) = 0;
+    virtual bool removebyTitle(std::string t1) = 0;
     virtual ~ITaskStorage() = default;
 
 };
