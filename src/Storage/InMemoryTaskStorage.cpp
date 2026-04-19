@@ -1,6 +1,12 @@
 #include "InMemoryTaskStorage.h"
 #include <algorithm>
 
+static bool isAllSpace(const std::string& st){
+    return std::all_of(st.begin(),st.end(),[](unsigned char c){
+        return std::isspace(c);
+    });
+}
+
 void backend::InMemoryTaskStorage::add(const backend::Task &task) {
     tasks.emplace_back(task);
 }
@@ -47,4 +53,20 @@ bool backend::InMemoryTaskStorage::removebyId(int id) {
 
     tasks.erase(it);
     return true;
+}
+
+bool backend::InMemoryTaskStorage::removebyTitle(std::string t1) {
+    if(t1.empty() || isAllSpace(t1))
+        return false;
+
+    auto it = std::find_if(tasks.begin(),tasks.end(),
+                           [&](Task& t){return t.title == t1;});
+
+    if(it == tasks.end())
+        return false;
+
+    tasks.erase(it);
+    return true;
+
+
 }
