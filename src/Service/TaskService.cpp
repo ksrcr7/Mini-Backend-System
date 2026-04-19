@@ -47,7 +47,7 @@ void backend::TaskService::completeTask(int id)  {
 
 }
 
-void backend::TaskService::deleteTask(int id) {
+void backend::TaskService::deleteTaskById(int id) {
     if(!storage.removebyId(id)){
         throw std::out_of_range("Task not found.");
     }
