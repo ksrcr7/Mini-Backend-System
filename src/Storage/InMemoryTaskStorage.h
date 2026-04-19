@@ -16,7 +16,7 @@ namespace backend{
         void update(const backend::Task& task) override;
         Task* findbyId(int id) override;
         bool removebyId(int id) override;
-        bool removebyTitle(std::string t1) override;
+        bool removebyTitle(const std::string& t1) override;
 
 
     };

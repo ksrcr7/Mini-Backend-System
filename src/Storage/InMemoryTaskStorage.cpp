@@ -55,7 +55,7 @@ bool backend::InMemoryTaskStorage::removebyId(int id) {
     return true;
 }
 
-bool backend::InMemoryTaskStorage::removebyTitle(std::string t1) {
+bool backend::InMemoryTaskStorage::removebyTitle(const std::string& t1) {
     if(t1.empty() || isAllSpace(t1))
         return false;
 
