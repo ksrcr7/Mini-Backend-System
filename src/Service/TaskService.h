@@ -18,6 +18,7 @@ namespace backend {
         [[nodiscard]] std::vector<Task> getTasks() const;
         void completeTask(int id) ;
         void deleteTaskById(int id);
+        void deleteTaskByTitle(const std::string& t1);
 
 
 
