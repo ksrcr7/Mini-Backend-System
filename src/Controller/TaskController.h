@@ -11,7 +11,12 @@ namespace backend{
             TaskService& service;
 
     public:
+        struct Command{
+            std::string action;
+            std::vector<std::string> args;
+        };
         explicit TaskController(TaskService& sv);
+        Command pars(const std::string& input);
 
 
 
